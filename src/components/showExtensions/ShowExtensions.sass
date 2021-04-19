@@ -1,0 +1,105 @@
+@import '../../App'
+    
+.show-extensions
+    display: grid
+    align-items: center
+    height: 100vh
+
+    .show-extensions-container
+        text-align: center
+        padding: 28px
+        box-shadow: 0px 30px 60px $box-shadow
+        border-radius: 32px
+        margin: 0 auto
+        width: 95%
+        height: 314px
+        max-width: 520px
+
+        .show-extensions-inner
+            display: grid
+            align-items: center
+            height: 100%
+            grid-template-rows: 56px auto auto auto
+            justify-items: center
+
+            .show-extensions-logo
+                width: 56px
+                height: 56px
+
+            .show-extensions-filename
+                font-size: 18px
+                font-weight: 600
+                color: $dark
+                margin-top: 14px
+                align-self: start
+                word-break: break-all
+
+            .show-extensions-convert
+                font-size: 14px
+                font-weight: 600
+                color: $dark
+                align-self: start
+                margin-top: 24px
+                animation: 1s appear
+
+            .show-extensions-grid
+                display: grid
+                grid-template-columns: 1fr 1fr 1fr
+                gap: 0 10px
+                animation: 1s appear
+                height: 56px
+                width: 100%
+                align-self: end
+
+                .show-extensions-button
+                    border: 2px solid $border
+                    border-radius: 8px
+                    background-color: white
+                    font-size: 12px
+                    font-weight: 600
+                    color: $dark
+                    outline: none
+                    transition: 0.2s
+
+                    &:hover
+                        background-color: $secondary-blue
+                        border-color: $secondary-blue
+                        color: white
+                        cursor: pointer
+
+            .show-extensions-convert-disappear
+                font-size: 14px
+                font-weight: 600
+                color: $dark
+                align-self: start
+                margin-top: 24px
+                animation-name: disappear
+                animation-duration: 1s
+                animation-fill-mode: forwards
+
+            .show-extensions-grid-disappear
+                animation-name: disappear
+                animation-duration: 1s
+                animation-fill-mode: forwards
+                display: grid
+                grid-template-columns: 1fr 1fr 1fr
+                gap: 0 10px
+                height: 56px
+                width: 100%
+                align-self: end
+
+                .show-extensions-button
+                    border: 2px solid $border
+                    border-radius: 8px
+                    background-color: white
+                    font-size: 12px
+                    font-weight: 600
+                    color: $dark
+                    outline: none
+                    transition: 0.2s
+
+                    &:hover
+                        background-color: $secondary-blue
+                        border-color: $secondary-blue
+                        color: white
+                        cursor: pointer

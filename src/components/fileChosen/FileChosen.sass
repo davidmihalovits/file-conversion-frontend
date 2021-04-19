@@ -1,0 +1,93 @@
+@import '../../App'
+    
+.file-uploading
+    display: grid
+    align-items: center
+    height: 100vh
+
+    .file-uploading-container
+        text-align: center
+        padding: 28px
+        box-shadow: 0px 30px 60px $box-shadow
+        border-radius: 32px
+        margin: 0 auto
+        width: 95%
+        height: 314px
+        max-width: 520px
+
+        .file-uploading-inner
+            display: grid
+            align-items: center
+            height: 100%
+            animation: 1s appear
+            grid-template-rows: 56px auto auto
+            justify-items: center
+
+            .file-uploading-logo
+                width: 56px
+                height: 56px
+
+            .file-uploading-filename
+                font-size: 18px
+                font-weight: 600
+                color: $dark
+                margin-top: 14px
+                align-self: start
+                word-break: break-all
+
+            .file-uploading-box
+                background-color: $light-background
+                border-radius: 8px
+                height: 56px
+                padding: 10px
+                display: grid
+                width: 100%
+                align-self: end
+
+                .file-uploading-text
+                    font-size: 12px
+                    font-weight: 600
+                    color: $dark
+                    text-align: left
+
+                .file-uploading-bar
+                    border-bottom: 2px solid $primary-blue
+                    transition: 2s 
+
+            .file-uploading-box-success
+                background-color: $success
+                border-radius: 8px
+                height: 56px
+                padding: 10px
+                display: grid
+                width: 100%
+                align-self: end
+                transition: 1s
+                animation-name: disappear
+                animation-duration: 1s
+                animation-delay: 1800ms
+                animation-fill-mode: forwards
+
+                .file-uploading-text-success
+                    font-size: 12px
+                    font-weight: 600
+                    color: $dark
+                    text-align: left
+                    animation: appear 1s, go-down 0.5s
+                    animation-fill-mode: forwards
+                    position: absolute
+
+                .file-uploading-text-disappear
+                    font-size: 12px
+                    font-weight: 600
+                    color: $dark
+                    text-align: left
+                    animation: disappear 1s, go-down 0.5s
+                    animation-fill-mode: forwards
+
+                .file-uploading-bar-success
+                    border-bottom: 2px solid $primary-blue
+                    animation: disappear 0.5s
+                    animation-fill-mode: forwards
+
+       

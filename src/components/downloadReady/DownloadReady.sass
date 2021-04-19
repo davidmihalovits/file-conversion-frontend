@@ -1,0 +1,59 @@
+@import '../../App'
+    
+.ready-download
+    display: grid
+    align-items: center
+    height: 100vh
+
+    .ready-download-container
+        text-align: center
+        padding: 28px
+        box-shadow: 0px 30px 60px $box-shadow
+        border-radius: 32px
+        margin: 0 auto
+        width: 95%
+        height: 314px
+        max-width: 520px
+
+        .ready-download-inner
+            display: grid
+            align-items: center
+            height: 100%
+            grid-template-rows: 56px auto auto
+            justify-items: center
+
+            .ready-download-logo
+                width: 56px
+                height: 56px
+
+            .ready-download-filename
+                font-size: 18px
+                font-weight: 600
+                color: $dark
+                margin-top: 14px
+                align-self: start
+                animation: appear 1s
+                word-break: break-all
+
+            .ready-download-link
+                width: 100%
+                align-self: end
+
+                .ready-download-button
+                    animation: 1s appear
+                    height: 56px
+                    width: 100%
+                    border: 2px solid $border
+                    border-radius: 8px
+                    background-color: white
+                    font-size: 12px
+                    font-weight: 600
+                    color: $dark
+                    outline: none
+                    transition: 0.2s
+
+                    &:hover
+                        background-color: $secondary-blue
+                        border-color: $secondary-blue
+                        color: white
+                        cursor: pointer

@@ -1,46 +1,23 @@
-# Getting Started with Create React App
+CLIENT FOR TECH TEST
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+git clone https://github.com/davidmihalovits/shapr-techtest-frontend.git
 
-## Available Scripts
+npm install
 
-In the project directory, you can run:
+npm start
 
-### `npm start`
+/// Summary ///
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Please wait for the Heroku server to "wake up", takes a few secs. It sleeps every 30 mins of inactivity.
+Please check my backend repo of this project for the server code.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. This project was very exciting to build because it represents a real-world app and it's full of tiny details to pay attention to.
+2. Used npx create-react-app TypeScript boilerplate to kick off.
+3. The only npm library I installed was node-sass. I specifically didn't use other libraries because I wanted to code all the cool stuff by myself such as the progress bar and animations.
+4. I like working with Sass because the code is cleaner and can use global variables across the whole project. I keep global styles in the App.sass.
+5. TypeScript is great for spotting common errors (before running into them), reading and debugging. It's like a self-documentation.
+6. Broke up the app into multiple components otherwise one big file would be too hard to read and edit.
+7. For a bigger app I would have used Redux for global state management (easier to work with) but here I just kept the state in the main App.tsx file. There is not too much state to manage or pass down.
+8. I rendered the components in the main App.tsx file based on user interaction. See comments please.
+9. Progress bar was created by putting a default value of "0%" in the progress state then passing this value to the width property of the div. Once the function runs, the progress state increases this value so that the progress bar (width) starts growing. There is a delay (setTimeout) function that must run too otherwise the progress bar would finish immediately in this project. Nothing complicated happens on the server. Users should see that nice little animation.
+10. I used Sass for animations, didn't want to use a library for simple animations like the ones in this project. Usually 3rd party libraries decreases the performance, are hard to customize exactly the way we want and most of the time we don't need them. It was very simple to implement these animations with the help of React conditionals.

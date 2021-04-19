@@ -1,0 +1,103 @@
+@import '../../App'
+    
+.extensionchosen-convert
+    display: grid
+    align-items: center
+    height: 100vh
+
+    .extensionchosen-convert-container
+        text-align: center
+        padding: 28px
+        box-shadow: 0px 30px 60px $box-shadow
+        border-radius: 32px
+        margin: 0 auto
+        width: 95%
+        height: 314px
+        max-width: 520px
+
+        .extensionchosen-convert-inner
+            display: grid
+            align-items: center
+            height: 100%
+            grid-template-rows: 56px auto auto
+            justify-items: center
+
+            .extensionchosen-convert-logo
+                width: 56px
+                height: 56px
+
+            .extensionchosen-convert-filename
+                font-size: 18px
+                font-weight: 600
+                color: $dark
+                margin-top: 14px
+                align-self: start
+                word-break: break-all
+
+            .extensionchosen-convert-filename-disappear
+                font-size: 18px
+                font-weight: 600
+                color: $dark
+                margin-top: 14px
+                align-self: start
+                word-break: break-all
+                animation-name: disappear
+                animation-duration: 1s
+                animation-delay: 1800ms
+                animation-fill-mode: forwards
+
+            .extensionchosen-convert-box
+                background-color: $light-background
+                border-radius: 8px
+                height: 56px
+                padding: 10px
+                display: grid
+                width: 100%
+                align-self: end
+                animation: 1s appear
+
+                .extensionchosen-convert-text
+                    font-size: 12px
+                    font-weight: 600
+                    color: $dark
+                    text-align: left
+
+                .extensionchosen-convert-bar
+                    border-bottom: 2px solid $primary-blue
+                    transition: 2s 
+
+            .extensionchosen-convert-box-success
+                background-color: $success
+                border-radius: 8px
+                height: 56px
+                padding: 10px
+                display: grid
+                width: 100%
+                align-self: end
+                transition: 1s
+                animation-name: disappear
+                animation-duration: 1s
+                animation-delay: 1800ms
+                animation-fill-mode: forwards
+
+                .extensionchosen-convert-text-success
+                    font-size: 12px
+                    font-weight: 600
+                    color: $dark
+                    text-align: left
+                    animation: appear 1s, go-down 0.5s
+                    animation-fill-mode: forwards
+                    position: absolute
+
+                .extensionchosen-convert-text-disappear
+                    font-size: 12px
+                    font-weight: 600
+                    color: $dark
+                    text-align: left
+                    animation: disappear 1s, go-down 0.5s
+                    animation-fill-mode: forwards
+
+                .extensionchosen-convert-bar-success
+                    border-bottom: 2px solid $primary-blue
+                    animation: disappear 0.5s
+                    animation-fill-mode: forwards
