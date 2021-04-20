@@ -12,6 +12,7 @@ type HomeProps = {
 };
 
 const Home: React.FunctionComponent<HomeProps> = (props) => {
+    // runs when user selects a file, only .shapr extension accepted
     const fileOnChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
         e.preventDefault();
 
@@ -22,6 +23,7 @@ const Home: React.FunctionComponent<HomeProps> = (props) => {
         const lastDot = await file.name.lastIndexOf(".");
         const extension = await file.name.substring(lastDot + 1);
 
+        // stops here if file extension is not .shapr
         if (extension !== "shapr") {
             return alert("Wrong file extension, only .shapr is accepted!");
         }
@@ -54,6 +56,7 @@ const Home: React.FunctionComponent<HomeProps> = (props) => {
         props.setShowExtensions(true);
     };
 
+    // runs when user drops a file, only .shapr extension accepted
     const handleOnDrop = async (e: React.DragEvent<HTMLLabelElement>) => {
         e.preventDefault();
 
@@ -65,6 +68,7 @@ const Home: React.FunctionComponent<HomeProps> = (props) => {
         const lastDot = await name.lastIndexOf(".");
         const extension = await name.substring(lastDot + 1);
 
+        // stops here if file extension is not .shapr
         if (extension !== "shapr") {
             return alert("Wrong file extension, only .shapr is accepted!");
         }

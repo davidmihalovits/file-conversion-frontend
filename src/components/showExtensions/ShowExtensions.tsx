@@ -16,6 +16,7 @@ type ShowExtensionsProps = {
 const ShowExtensions: React.FunctionComponent<ShowExtensionsProps> = (
     props
 ) => {
+    // changes file extension on the server/storage then provides download link
     const changeExtension = async (e: string) => {
         const delay = (ms: number) => new Promise((res) => setTimeout(res, ms));
 
