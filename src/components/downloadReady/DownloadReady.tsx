@@ -13,7 +13,7 @@ const DownloadReady: React.FunctionComponent<DownloadReadyProps> = (props) => {
                 <div className="ready-download-inner">
                     <img
                         src={logo}
-                        alt="shapr3dlogo"
+                        alt="logo"
                         className="ready-download-logo"
                     />
                     <p className="ready-download-filename">{props.file}</p>

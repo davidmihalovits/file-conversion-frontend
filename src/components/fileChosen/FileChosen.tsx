@@ -13,7 +13,7 @@ const FileChosen: React.FunctionComponent<FileChosenProps> = (props) => {
                 <div className="file-uploading-inner">
                     <img
                         src={logo}
-                        alt="shapr3dlogo"
+                        alt="logo"
                         className="file-uploading-logo"
                     />
                     <p className="file-uploading-filename">{props.file}</p>

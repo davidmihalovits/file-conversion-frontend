@@ -29,7 +29,7 @@ const ShowExtensions: React.FunctionComponent<ShowExtensionsProps> = (
         props.setProgress2("1%");
 
         await fetch(
-            `https://shapr3d-techtest-server.herokuapp.com/modifyExtension/${props.fileKey}`,
+            `https://file-conversion-mock.herokuapp.com/modifyExtension/${props.fileKey}`,
             {
                 method: "PUT",
                 headers: {
@@ -49,8 +49,8 @@ const ShowExtensions: React.FunctionComponent<ShowExtensionsProps> = (
 
         props.setDownloadButton(true);
 
-        props.setFile(props.file.replace(".shapr", e));
-        const newFileName = props.file.replace(".shapr", e);
+        props.setFile(props.file.replace(".txt", e));
+        const newFileName = props.file.replace(".txt", e);
 
         props.setDownloadLink(
             `https://file-upload-challenge.s3.eu-central-1.amazonaws.com/${props.fileKey}-${newFileName}`
@@ -63,7 +63,7 @@ const ShowExtensions: React.FunctionComponent<ShowExtensionsProps> = (
                 <div className="show-extensions-inner">
                     <img
                         src={logo}
-                        alt="shapr3dlogo"
+                        alt="logo"
                         className="show-extensions-logo"
                     />
                     <p className="show-extensions-filename">{props.file}</p>

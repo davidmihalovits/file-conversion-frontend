@@ -16,7 +16,7 @@ const ExtensionChosen: React.FunctionComponent<ExtensionChosenProps> = (
                 <div className="extensionchosen-convert-inner">
                     <img
                         src={logo}
-                        alt="shapr3dlogo"
+                        alt="logo"
                         className="extensionchosen-convert-logo"
                     />
                     <p

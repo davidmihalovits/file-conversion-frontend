@@ -12,20 +12,20 @@ type HomeProps = {
 };
 
 const Home: React.FunctionComponent<HomeProps> = (props) => {
-    // runs when user selects a file, only .shapr extension accepted
+    // runs when user selects a file, only .txt extension accepted
     const fileOnChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
         e.preventDefault();
 
         props.setProgress("1%");
 
-        var file: File = await e.target.files![0];
+        var file: File = e.target.files![0];
 
-        const lastDot = await file.name.lastIndexOf(".");
-        const extension = await file.name.substring(lastDot + 1);
+        const lastDot = file.name.lastIndexOf(".");
+        const extension = file.name.substring(lastDot + 1);
 
-        // stops here if file extension is not .shapr
-        if (extension !== "shapr") {
-            return alert("Wrong file extension, only .shapr is accepted!");
+        // stops here if file extension is not .txt
+        if (extension !== "txt") {
+            return alert("Wrong file extension, only .txt is accepted!");
         }
 
         const formData: FormData = new FormData();
@@ -33,13 +33,10 @@ const Home: React.FunctionComponent<HomeProps> = (props) => {
 
         props.setFile(file.name);
 
-        await fetch(
-            "https://shapr3d-techtest-server.herokuapp.com/uploadFile",
-            {
-                method: "POST",
-                body: formData,
-            }
-        )
+        await fetch("https://file-conversion-mock.herokuapp.com/uploadFile", {
+            method: "POST",
+            body: formData,
+        })
             .then((res) => res.json())
             .then((res) => props.setFileKey(res.key));
 
@@ -56,21 +53,21 @@ const Home: React.FunctionComponent<HomeProps> = (props) => {
         props.setShowExtensions(true);
     };
 
-    // runs when user drops a file, only .shapr extension accepted
+    // runs when user drops a file, only .txt extension accepted
     const handleOnDrop = async (e: React.DragEvent<HTMLLabelElement>) => {
         e.preventDefault();
 
         props.setProgress("1%");
 
-        const file = await e.dataTransfer.files[0];
+        const file = e.dataTransfer.files[0];
 
-        const name = await e.dataTransfer.files[0].name;
-        const lastDot = await name.lastIndexOf(".");
-        const extension = await name.substring(lastDot + 1);
+        const name = e.dataTransfer.files[0].name;
+        const lastDot = name.lastIndexOf(".");
+        const extension = name.substring(lastDot + 1);
 
-        // stops here if file extension is not .shapr
-        if (extension !== "shapr") {
-            return alert("Wrong file extension, only .shapr is accepted!");
+        // stops here if file extension is not .txt
+        if (extension !== "txt") {
+            return alert("Wrong file extension, only .txt is accepted!");
         }
 
         const formData = new FormData();
@@ -78,13 +75,10 @@ const Home: React.FunctionComponent<HomeProps> = (props) => {
 
         props.setFile(file.name);
 
-        await fetch(
-            "https://shapr3d-techtest-server.herokuapp.com/uploadFile",
-            {
-                method: "POST",
-                body: formData,
-            }
-        )
+        await fetch("https://file-conversion-mock.herokuapp.com/uploadFile", {
+            method: "POST",
+            body: formData,
+        })
             .then((res) => res.json())
             .then((res) => props.setFileKey(res.key));
 
@@ -127,19 +121,15 @@ const Home: React.FunctionComponent<HomeProps> = (props) => {
                         name="file"
                         id="file"
                         type="file"
-                        accept=".shapr"
+                        accept=".txt"
                         value={""}
                         onChange={fileOnChange}
                     />
                     <div className="home-inner">
                         <div>
-                            <img
-                                src={logo}
-                                alt="shapr3dlogo"
-                                className="home-logo"
-                            />
+                            <img src={logo} alt="logo" className="home-logo" />
                             <p className="home-primary-instruction">
-                                Drop your .shapr file here, or{" "}
+                                Drop your .txt file here, or{" "}
                                 <span className="home-browse">browse</span>
                             </p>
                             <p className="home-secondary-instruction">
